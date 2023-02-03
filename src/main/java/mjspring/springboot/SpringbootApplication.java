@@ -19,6 +19,7 @@ public class SpringbootApplication {
 	public static void main(String[] args) {
 		GenericApplicationContext applicationContext = new GenericApplicationContext();
 		applicationContext.registerBean(HelloController.class); // Bean 등록
+		applicationContext.registerBean(SimpleHelloService.class); // 생성 순서와 DI는 스프링이 알아서 구현체 정보를 가지고 결정함.
 		applicationContext.refresh(); // 초기화(재구성?)
 
 		ServletWebServerFactory serverFactory = new TomcatServletWebServerFactory();
