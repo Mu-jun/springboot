@@ -23,26 +23,8 @@ public class SpringbootApplication {
 	}
 
 	public static void main(String[] args) {
-		AnnotationConfigWebApplicationContext applicationContext = new AnnotationConfigWebApplicationContext() {
-			@Override
-			protected void onRefresh() {
-				super.onRefresh();
-
-				ServletWebServerFactory serverFactory = this.getBean(ServletWebServerFactory.class);
-				DispatcherServlet dispatcherServlet = this.getBean(DispatcherServlet.class);
-//				dispatcherServlet.setApplicationContext(this); 스프링 컨테이너가 알아서 넣어준다.
-
-				WebServer webServer = serverFactory.getWebServer(servletContext -> {
-					servletContext.addServlet("dispatcherServlet", dispatcherServlet)
-						.addMapping("/*");
-				});
-				webServer.start();
-			}
-		};
-		applicationContext.register(SpringbootApplication.class);
-		applicationContext.refresh();
-
-
+		MySpringApplication.run(SpringbootApplication.class, args);
 	}
+
 
 }
