@@ -1,0 +1,2 @@
+mjspring.config.autoconfig.DispatcherServletConfig
+mjspring.config.autoconfig.TomcatWebServerConfig
