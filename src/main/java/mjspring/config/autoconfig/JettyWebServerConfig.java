@@ -2,23 +2,23 @@ package mjspring.config.autoconfig;
 
 import mjspring.config.ConditionalMyOnClass;
 import mjspring.config.MyAutoConfiguration;
-import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
+import org.springframework.boot.web.embedded.jetty.JettyServletWebServerFactory;
 import org.springframework.boot.web.servlet.server.ServletWebServerFactory;
 import org.springframework.context.annotation.Bean;
 
 @MyAutoConfiguration
-//@Conditional(TomcatWebServerConfig.TomcatCondition.class)
-@ConditionalMyOnClass("org.apache.catalina.startup.Tomcat")
-public class TomcatWebServerConfig {
-    @Bean("tomcatWebServerFactory")
+//@Conditional(JettyWebServerConfig.JettyCondition.class)
+@ConditionalMyOnClass("org.eclipse.jetty.server.Server")
+public class JettyWebServerConfig {
+    @Bean("jettyWebServerFactory") // Default는 메소드 이름이 Bean의 이름이 된다.
     public ServletWebServerFactory servletWebServerFactory() {
-        return new TomcatServletWebServerFactory();
+        return new JettyServletWebServerFactory();
     }
 
-//    static class TomcatCondition implements Condition {
+//    static class JettyCondition implements Condition {
 //        @Override
 //        public boolean matches(ConditionContext context, AnnotatedTypeMetadata metadata) {
-//            return ClassUtils.isPresent("org.apache.catalina.startup.Tomcat",
+//            return ClassUtils.isPresent("org.eclipse.jetty.server.Server",
 //                    context.getClassLoader());
 //        }
 //    }
