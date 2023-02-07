@@ -1,6 +1,0 @@
-mjspring.config.autoconfig.DispatcherServletConfig
-mjspring.config.autoconfig.TomcatWebServerConfig
-mjspring.config.autoconfig.JettyWebServerConfig
-mjspring.config.autoconfig.PropertyPlaceholderConfig
-mjspring.config.autoconfig.PropertyPostProcessorConfig
-mjspring.config.autoconfig.DataSourceConfig
