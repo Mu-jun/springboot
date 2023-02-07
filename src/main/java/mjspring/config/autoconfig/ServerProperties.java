@@ -1,5 +1,8 @@
 package mjspring.config.autoconfig;
 
+import mjspring.config.MyConfigrationProperties;
+
+@MyConfigrationProperties
 public class ServerProperties {
     private String contextPath;
 
