@@ -43,3 +43,30 @@
 ## SpEL Expression Conditions
 - ```@ConditionalOnExpression```은 스프링 SpEL(스프링 표현식)의 처리 결과를 기준으로 판단한다.
 - 매우 상세한 조건 설정이 가능하다.
+
+# 자동 구성 분석 방법
+## JVM 옵션에 -Ddebug 또는 애플리케이션 인수에 --debug 추가
+- 자동구성 클래스 Condition 결과 로그
+- Condition을 통과한 정보와 실패한 정보들이 다 나온다. 
+
+## ConditionEvaluationReport 코드로 확인
+- 자동구성 클래스 Conditon 결과 빈
+- 결과만 간단하게 나옴.
+
+## ListableBeanFactory 코드로 확인
+- 등록된 빈 확인
+
+## 오픈소스 확인
+### 자동 구성 클래스와 조건, 빈 확인
+- @AutoConfiguration
+- @Conditional
+- Condition 클래스
+- @Bean
+### 프로퍼티 클래스와 바인딩
+- Properties
+- Bind
+- Customizer
+- Configurer
+
+## SpringBoot Reference
+- ***공식문서에서 관련 기술, 자동구성, 프로퍼티 확인***
